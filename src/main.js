@@ -1,9 +1,11 @@
 export default async ({ req, res, log, error }) => {
-  if (req.method == 'GET') {
+  log(req.method);
+
+  if (req.method === 'GET') {
     return res.send('Hi there');
   }
 
-  if (req.method == 'POST') {
+  if (req.method === 'POST') {
     return res.json({
       'sendData': req.body,
       'DOGENV': process.env.DOGENV,
