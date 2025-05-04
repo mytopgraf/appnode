@@ -16,10 +16,10 @@ export default async ({ req, res, log, error }) => {
 
   
   if (req.method === 'GET') {
-    const response = await database.listDocuments({
+    const response = await database.listDocuments(
       DATABASE_ID,
       COLLECTION_USERS_ID
-    })
+    )
     return res.json(response.documents)
   }
 
